@@ -1,0 +1,17 @@
+<header>
+  <ul>
+    <li *ngFor="let lang of translationService.languages$ | async">
+      <a style="cursor: pointer;" (click)="translationService.updateLanguage(lang)">{{ lang }}</a>
+    </li>
+  </ul>
+</header>
+<main>
+  <div>
+    <h1>{{ title }}</h1>
+    <!-- This kind of translations will only be affected by a full page reload -->
+    <!--<p i18n="@@ninety-nine">ninety-nine</p>-->
+    <p>{{ ninetyNine }}</p>
+  </div>
+</main>
+
+<router-outlet/>
